@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  mainSpecialty: MyString
+  about: MyString
+  email: MyString
+  phone: MyString
+  AcceptsAutoBill: false
+  AcceptsAutoAppointment: false
+  IsLive: false
+  IsDemo: false
+
+two:
+  name: MyString
+  mainSpecialty: MyString
+  about: MyString
+  email: MyString
+  phone: MyString
+  AcceptsAutoBill: false
+  AcceptsAutoAppointment: false
+  IsLive: false
+  IsDemo: false

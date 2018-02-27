@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  gender: MyString
+  fulltitle: MyString
+  specialty: one
+  practice: one
+  medicalschool: MyString
+  phone: MyString
+  IsDefaultChatbot: false
+  IsInactive: false
+
+two:
+  name: MyString
+  gender: MyString
+  fulltitle: MyString
+  specialty: two
+  practice: two
+  medicalschool: MyString
+  phone: MyString
+  IsDefaultChatbot: false
+  IsInactive: false

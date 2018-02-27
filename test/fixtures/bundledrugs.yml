@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  IsDelivered: false
+  IsReceived: false
+  prescription: one
+
+two:
+  IsDelivered: false
+  IsReceived: false
+  prescription: two
