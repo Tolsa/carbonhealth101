@@ -91,6 +91,22 @@ puts 'Finished for specialties!'
 
 puts 'Creating 150 fake patients...'
 
+150.times do
+  patient = Patient.new(
+    name: Faker::Name.unique.name,
+    gender: ["Male","Female"].sample,
+    phone: Faker::PhoneNumber.cell_phone,
+    address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+    birthdate: Faker::Date.birthday(16, 85),
+    InsuranceCardOK: [true, false].sample,
+    IsVerified: [true, false].sample,
+    created_at: Faker::Date.between(15.days.ago, Date.today),
+    updated_at: Faker::Date.between(5.days.ago, Date.today),
+  )
+  patient.save!
+end
+puts 'Finished for patients!'
+
 
 
 
