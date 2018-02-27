@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227152551) do
+ActiveRecord::Schema.define(version: 20180227170403) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20180227152551) do
     t.bigint "prescription_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "drug_id"
+    t.index ["drug_id"], name: "index_bundledrugs_on_drug_id"
     t.index ["prescription_id"], name: "index_bundledrugs_on_prescription_id"
   end
 
@@ -56,11 +58,9 @@ ActiveRecord::Schema.define(version: 20180227152551) do
   create_table "drugs", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.bigint "bundledrug_id"
     t.boolean "IsAvailable"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["bundledrug_id"], name: "index_drugs_on_bundledrug_id"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -107,9 +107,9 @@ ActiveRecord::Schema.define(version: 20180227152551) do
 
   add_foreign_key "appointments", "doctors"
   add_foreign_key "appointments", "patients"
+  add_foreign_key "bundledrugs", "drugs"
   add_foreign_key "bundledrugs", "prescriptions"
   add_foreign_key "doctors", "practices"
   add_foreign_key "doctors", "specialties"
-  add_foreign_key "drugs", "bundledrugs"
   add_foreign_key "prescriptions", "appointments"
 end
