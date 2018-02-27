@@ -1,3 +1,4 @@
 class Bundledrug < ApplicationRecord
-  belongs_to :prescription
+  belongs_to :prescriptions
+  belongs_to :drugs
 end
