@@ -1,6 +1,5 @@
 class Forest::Prescription
   include ForestLiana::Collection
-
   collection :Prescription
 
   action 'Reminder of pending order'
