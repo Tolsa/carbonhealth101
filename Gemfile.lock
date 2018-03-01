@@ -82,7 +82,7 @@ GEM
     ffi (1.9.23-java)
     ffi (1.9.23-x64-mingw32)
     ffi (1.9.23-x86-mingw32)
-    forest_liana (2.3.4)
+    forest_liana (2.4.0)
       arel-helpers
       bcrypt
       groupdate
