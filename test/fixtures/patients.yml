@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  gender: MyString
+  phone: MyString
+  birthdate: MyString
+  address: MyString
+  InsuranceCardOK: false
+  IsVerified: false
+
+two:
+  name: MyString
+  gender: MyString
+  phone: MyString
+  birthdate: MyString
+  address: MyString
+  InsuranceCardOK: false
+  IsVerified: false
