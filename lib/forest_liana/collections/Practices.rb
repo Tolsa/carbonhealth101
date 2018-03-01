@@ -7,4 +7,10 @@ class Forest::Practice
     type: 'Date',
   }]
   action 'Send doclist reminder'
+
+
+  field :doctors, type: 'Number' do
+    object.doctors.count
+  end
+
 end
