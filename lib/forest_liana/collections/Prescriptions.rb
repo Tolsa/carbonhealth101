@@ -1,6 +1,5 @@
 class Forest::Prescription
   include ForestLiana::Collection
-
   collection :Prescription
 
   action 'Reminder of pending order'
@@ -27,6 +26,14 @@ class Forest::Prescription
     else
       false
     end
+  end
+
+  belongs_to :patient, reference: 'Patient.id' do
+    object.appointment.patient # returns a "DeliveryMan" Model.
+  end
+
+  belongs_to :doctor, reference: 'Doctor.id' do
+    object.appointment.doctor # returns a "DeliveryMan" Model.
   end
 
 
