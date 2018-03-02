@@ -3,7 +3,7 @@ class Forest::Prescription
   collection :Prescription
 
   action 'Reminder of pending order'
-  action 'Notice to pharmacist'
+  action 'Notice to pharmacist', type: 'single'
 
 
   field :delivered, type: 'String' do
@@ -36,10 +36,17 @@ class Forest::Prescription
     object.appointment.doctor # returns a "DeliveryMan" Model.
   end
 
+  segment 'Ordered' do
+    { id: Prescription
+      .joins(:bundledrugs).where(IsOrdered: true, bundledrugs: {IsDelivered: false})
+      .map(&:id)
+    }
+  end
+
 
   segment 'Drugs sent' do
     delivered_prescriptions = Bundledrug
-      .where(IsDelivered: true)
+      .where(IsDelivered: true, IsReceived: false)
       .map(&:prescription_id)
     { id: delivered_prescriptions }
   end
