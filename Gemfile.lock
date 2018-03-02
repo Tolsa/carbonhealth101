@@ -75,7 +75,7 @@ GEM
     faker (1.8.7)
       i18n (>= 0.7)
     ffi (1.9.23)
-    forest_liana (2.4.0)
+    forest_liana (2.4.1)
       arel-helpers
       bcrypt
       groupdate
