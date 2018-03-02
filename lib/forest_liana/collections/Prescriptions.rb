@@ -21,8 +21,6 @@ class Forest::Prescription
     alldrugs = Bundledrug.where(prescription_id: object.id)
     if alldrugs.count == alldrugs.to_a.select(&:IsReceived).length && alldrugs != []
       true
-    elsif alldrugs == []
-      false
     else
       false
     end
@@ -51,11 +49,10 @@ class Forest::Prescription
     { id: delivered_prescriptions }
   end
 
-    segment 'Drugs received' do
-    received_prescriptions = Bundledrug
-      .where(IsReceived: true)
-      .map(&:prescription_id)
-    { id: received_prescriptions }
+  segment 'Drugs received' do
+    { id: Prescription
+      .joins(:bundledrugs).where(IsOrdered: true, bundledrugs: {IsDelivered: true, IsReceived: true})
+      .map(&:id) }
   end
 end
 
