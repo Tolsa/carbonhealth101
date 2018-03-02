@@ -28,13 +28,13 @@ class Forest::Prescription
     end
   end
 
-  # belongs_to :patient, reference: 'Patient.id' do
-  #   object.appointment.patient # returns a "DeliveryMan" Model.
-  # end
+  belongs_to :patient, reference: 'Patient.id' do
+    object.appointment.patient # returns a "DeliveryMan" Model.
+  end
 
-  # belongs_to :doctor, reference: 'Doctor.id' do
-  #   object.appointment.doctor # returns a "DeliveryMan" Model.
-  # end
+  belongs_to :doctor, reference: 'Doctor.id' do
+    object.appointment.doctor # returns a "DeliveryMan" Model.
+  end
 
 
   segment 'Drugs sent' do
