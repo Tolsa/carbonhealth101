@@ -38,7 +38,7 @@ class Forest::Prescription
 
   segment 'Ordered' do
     { id: Prescription
-      .joins(:bundledrugs).where(IsOrdered: true, bundledrugs: {IsDelivered: false})
+      .joins(:bundledrugs).where(IsOrdered: true, bundledrugs: {IsDelivered: false, IsReceived: false})
       .map(&:id)
     }
   end
